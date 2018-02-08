@@ -15,10 +15,17 @@ namespace EmployeeRegister.Controllers
         private EmployeeRegisterContext db = new EmployeeRegisterContext();
 
         // GET: Employees
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
             var model = db.Employees.OrderBy(s => s.FirstName).ToList();
-            return View(model);
+            var searchdb = from m in db.Employees select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                searchdb = searchdb.Where(s => s.FirstName.Contains(searchString)|| s.LastName.Contains(searchString));
+            }
+
+            return View(searchdb);
         }
 
         public ActionResult SortBySalary()
@@ -29,19 +36,22 @@ namespace EmployeeRegister.Controllers
 
         public ActionResult Sport()
         {
-            var model = db.Employees.Where(i => i.Department == "Sport").ToList();
+            var model = db.Employees.Where(i => i.Department == "Sport").ToList();
+
             return View(model);
         }
 
         public ActionResult Managers()
         {
-            var model = db.Employees.Where(i => i.Position == "Manager").ToList();
+            var model = db.Employees.Where(i => i.Position == "Manager").ToList();
+
             return View(model);
         }
 
         public ActionResult Sales()
         {
-            var model = db.Employees.Where(i => i.Department == "Sales").ToList();
+            var model = db.Employees.Where(i => i.Department == "Sales").ToList();
+
             return View(model);
         }
 
@@ -104,7 +114,7 @@ namespace EmployeeRegister.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Salary,Position,Department")] Employee employee)
+        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,BirthDate,Salary,Position,Department")] Employee employee)
         {
             if (ModelState.IsValid)
             {

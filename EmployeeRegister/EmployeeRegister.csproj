@@ -169,6 +169,14 @@
     <Compile Include="Migrations\201802061321387_Employees1.Designer.cs">
       <DependentUpon>201802061321387_Employees1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802080947590_employee.cs" />
+    <Compile Include="Migrations\201802080947590_employee.Designer.cs">
+      <DependentUpon>201802080947590_employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802081252517_employee1.cs" />
+    <Compile Include="Migrations\201802081252517_employee1.Designer.cs">
+      <DependentUpon>201802081252517_employee1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\EmployeeRegisterContext.cs" />
@@ -190,6 +198,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.tablesorter.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -197,7 +206,6 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\Sort.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -250,6 +258,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802061321387_Employees1.resx">
       <DependentUpon>201802061321387_Employees1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802080947590_employee.resx">
+      <DependentUpon>201802080947590_employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802081252517_employee1.resx">
+      <DependentUpon>201802081252517_employee1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
