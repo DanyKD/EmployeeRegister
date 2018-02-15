@@ -29,5 +29,6 @@ namespace EmployeeRegister.Models
         Finance = 4,
         Sport = 5,
         Factory = 6,
+        Education=7,
     }
 }

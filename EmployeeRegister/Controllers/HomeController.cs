@@ -22,7 +22,7 @@ namespace EmployeeRegister.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Dany Kassdaoud";
 
             return View();
         }
