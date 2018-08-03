@@ -153,29 +153,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201802060852136_InitialCreate.cs" />
-    <Compile Include="Migrations\201802060852136_InitialCreate.Designer.cs">
-      <DependentUpon>201802060852136_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802061307000_Employees.FirstName.cs" />
-    <Compile Include="Migrations\201802061307000_Employees.FirstName.Designer.cs">
-      <DependentUpon>201802061307000_Employees.FirstName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802061311027_Employees.cs" />
-    <Compile Include="Migrations\201802061311027_Employees.Designer.cs">
-      <DependentUpon>201802061311027_Employees.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802061321387_Employees1.cs" />
-    <Compile Include="Migrations\201802061321387_Employees1.Designer.cs">
-      <DependentUpon>201802061321387_Employees1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802080947590_employee.cs" />
-    <Compile Include="Migrations\201802080947590_employee.Designer.cs">
-      <DependentUpon>201802080947590_employee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802081252517_employee1.cs" />
-    <Compile Include="Migrations\201802081252517_employee1.Designer.cs">
-      <DependentUpon>201802081252517_employee1.cs</DependentUpon>
+    <Compile Include="Migrations\201808031019094_1.cs" />
+    <Compile Include="Migrations\201808031019094_1.Designer.cs">
+      <DependentUpon>201808031019094_1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -250,23 +230,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201802060852136_InitialCreate.resx">
-      <DependentUpon>201802060852136_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802061307000_Employees.FirstName.resx">
-      <DependentUpon>201802061307000_Employees.FirstName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802061311027_Employees.resx">
-      <DependentUpon>201802061311027_Employees.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802061321387_Employees1.resx">
-      <DependentUpon>201802061321387_Employees1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802080947590_employee.resx">
-      <DependentUpon>201802080947590_employee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802081252517_employee1.resx">
-      <DependentUpon>201802081252517_employee1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808031019094_1.resx">
+      <DependentUpon>201808031019094_1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

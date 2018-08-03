@@ -3,7 +3,7 @@ namespace EmployeeRegister.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class _1 : DbMigration
     {
         public override void Up()
         {
@@ -14,6 +14,7 @@ namespace EmployeeRegister.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         FirstName = c.String(),
                         LastName = c.String(),
+                        BirthDate = c.DateTime(nullable: false),
                         Salary = c.Int(nullable: false),
                         Position = c.String(),
                         Department = c.String(),

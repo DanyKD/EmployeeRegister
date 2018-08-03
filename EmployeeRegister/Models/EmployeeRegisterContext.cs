@@ -18,7 +18,6 @@ namespace EmployeeRegister.Models
         public EmployeeRegisterContext() : base("name=EmployeeRegisterContext")
         {
         }
-
         public DbSet<Employee> Employees { get; set; }
     }
     

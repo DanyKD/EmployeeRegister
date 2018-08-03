@@ -1,5 +1,6 @@
 namespace EmployeeRegister.Migrations
 {
+    using EmployeeRegister.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -10,7 +11,7 @@ namespace EmployeeRegister.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "EmployeeRegister.Models.EmployeeRegisterContext";
+            
         }
 
         protected override void Seed(EmployeeRegister.Models.EmployeeRegisterContext context)
@@ -27,13 +28,12 @@ namespace EmployeeRegister.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-            context.Employees.AddOrUpdate(
-                p => p.FirstName,
-                new Models.Employee { FirstName = "Dany", LastName = "KassDaoud", Salary = 35000, Position = "FSS", Department = "Sales" },
-                new Models.Employee { FirstName = "Tony", LastName = "Abdo", Salary = 30000, Position = "Treasury", Department = "Finance" },
-                new Models.Employee { FirstName = "Nada", LastName = "Maatouk", Salary = 40000, Position = "DP", Department = "SupplyChain" },
-                new Models.Employee { FirstName = "Maher", LastName = "AboHelaneh", Salary = 55000, Position = "MDS", Department = "Sport" },
-                new Models.Employee { FirstName = "Jean", LastName = "Sano", Salary = 75000, Position = "Manager", Department = "Sales" }
+            context.Employees.AddOrUpdate(               
+                new Employee { FirstName = "Dany", LastName = "KassDaoud", Salary = 35000, Position = "FSS", Department = "Sales", BirthDate=DateTime.Now},
+                new Employee { FirstName = "Tony", LastName = "Abdo", Salary = 30000, Position = "Treasury", Department = "Finance", BirthDate = DateTime.Now },
+                new Employee { FirstName = "Nada", LastName = "Maatouk", Salary = 40000, Position = "DP", Department = "SupplyChain", BirthDate = DateTime.Now },
+                new Employee { FirstName = "Maher", LastName = "AboHelaneh", Salary = 55000, Position = "MDS", Department = "Sport", BirthDate = DateTime.Now },
+                new Employee { FirstName = "Jean", LastName = "Sano", Salary = 75000, Position = "Manager", Department = "Sales", BirthDate = DateTime.Now }
                 );
         }
     }
