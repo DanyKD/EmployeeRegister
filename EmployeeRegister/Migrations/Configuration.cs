@@ -28,12 +28,13 @@ namespace EmployeeRegister.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-            context.Employees.AddOrUpdate(               
-                new Employee { FirstName = "Dany", LastName = "KassDaoud", Salary = 35000, Position = "FSS", Department = "Sales", BirthDate=DateTime.Now},
-                new Employee { FirstName = "Tony", LastName = "Abdo", Salary = 30000, Position = "Treasury", Department = "Finance", BirthDate = DateTime.Now },
-                new Employee { FirstName = "Nada", LastName = "Maatouk", Salary = 40000, Position = "DP", Department = "SupplyChain", BirthDate = DateTime.Now },
-                new Employee { FirstName = "Maher", LastName = "AboHelaneh", Salary = 55000, Position = "MDS", Department = "Sport", BirthDate = DateTime.Now },
-                new Employee { FirstName = "Jean", LastName = "Sano", Salary = 75000, Position = "Manager", Department = "Sales", BirthDate = DateTime.Now }
+            context.Employees.AddOrUpdate(
+                p=>p.FirstName,                
+                new Employee { FirstName = "Dany", LastName = "KassDaoud", Salary = 35000, Position = "FSS", Department = Department.Sales, BirthDate=DateTime.Now},
+                new Employee { FirstName = "Tony", LastName = "Abdo", Salary = 30000, Position = "Treasury", Department = Department.HR, BirthDate = DateTime.Now },
+                new Employee { FirstName = "Nada", LastName = "Maatouk", Salary = 40000, Position = "DP", Department = Department.Sales, BirthDate = DateTime.Now },
+                new Employee { FirstName = "Maher", LastName = "AboHelaneh", Salary = 55000, Position = "MDS", Department =Department.Sales, BirthDate = DateTime.Now },
+                new Employee { FirstName = "Jean", LastName = "Sano", Salary = 75000, Position = "Manager", Department = Department.Sport, BirthDate = DateTime.Now }
                 );
         }
     }

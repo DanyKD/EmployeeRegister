@@ -15,16 +15,16 @@ namespace EmployeeRegister.Models
         public DateTime BirthDate { get; set; }
         public int Salary { get; set; }
         public string Position { get; set; }
-        public string Department { get; set; }
+        public Department Department { get; set; }
     }
-    //public enum Department
-    //{
-    //    Sales = 1,
-    //    SupplyChain = 2,
-    //    HR = 3,
-    //    Finance = 4,
-    //    Sport = 5,
-    //    Factory = 6,
-    //    Education=7,
-    //}
+    public enum Department
+    {
+        Education = 1,
+        Factory = 2,
+        Finance = 3,
+        HR = 4,        
+        Sales = 5,
+        Sport = 6,
+        SupplyChain = 7,
+    }
 }

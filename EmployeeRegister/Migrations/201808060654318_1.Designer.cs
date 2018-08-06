@@ -13,7 +13,7 @@ namespace EmployeeRegister.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201808031019094_1"; }
+            get { return "201808060654318_1"; }
         }
         
         string IMigrationMetadata.Source

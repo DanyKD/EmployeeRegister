@@ -17,7 +17,7 @@ namespace EmployeeRegister.Migrations
                         BirthDate = c.DateTime(nullable: false),
                         Salary = c.Int(nullable: false),
                         Position = c.String(),
-                        Department = c.String(),
+                        Department = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             

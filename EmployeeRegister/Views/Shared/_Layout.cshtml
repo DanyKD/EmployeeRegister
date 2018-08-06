@@ -34,12 +34,13 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>@Html.ActionLink("Employee", "Index", "Employees")</li>
                     <li>@Html.ActionLink("Create", "Create", "Employees")</li>
+                    <li>@Html.ActionLink("Sport", "Sport", "Employees")</li>
                     <li>@Html.ActionLink("Sort By Salary", "SortBySalary", "Employees")</li>
                 </ul>
             </div>
         </div>
     </nav>
-        <div id="My" class="carousel-slide" data-ride="carousel">
+        @*<div id="My" class="carousel-slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#My" data-slide-to="0" class="active"></li>
                 <li data-target="#My" data-slide-to="1"></li>
@@ -75,7 +76,7 @@
                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
-        </div>    
+        </div>*@    
     <div class="container body-content">
         @RenderBody()
         <hr />

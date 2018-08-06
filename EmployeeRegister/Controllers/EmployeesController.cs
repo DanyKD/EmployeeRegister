@@ -28,15 +28,40 @@ namespace EmployeeRegister.Controllers
             return View(searchdb);
         }
 
-        public ActionResult SortBySalary()
+        public ActionResult SortBySalary(string sortBy)
         {
-            
-            return View(db.Employees.ToList());
+            var SalaryDb = db.Employees.AsQueryable();
+            ViewBag.SortSalaryParameter = string.IsNullOrEmpty(sortBy) ? "Salary desc" : "";
+            ViewBag.SortDepartmentParameter = sortBy == "Department" ? "Department desc" : "Department";
+            ViewBag.SortFirstNameParameter = sortBy == "FirstName" ? "FirstName desc" : "FirstName";
+
+            switch (sortBy)
+            {
+                case "Salary desc":
+                SalaryDb = SalaryDb.OrderByDescending(x => x.Salary);
+                    break;
+                case "Department":
+                    SalaryDb = SalaryDb.OrderBy(x => x.Department);
+                    break;
+                case "Department desc":
+                    SalaryDb = SalaryDb.OrderByDescending(x => x.Department);
+                    break;
+                case "FirstName desc":
+                    SalaryDb = SalaryDb.OrderByDescending(x => x.FirstName);
+                    break;
+                case "FirstName":
+                    SalaryDb = SalaryDb.OrderBy(x => x.FirstName);
+                    break;
+                default:
+                    SalaryDb = SalaryDb.OrderBy(x => x.Salary);
+                    break;
+             }            
+            return View(SalaryDb.ToList());
         }
 
         public ActionResult Sport()
         {
-            var model = db.Employees.Where(i => i.Department == "Sport").ToList();
+            var model = db.Employees.Where(i => i.Department== Department.Sport).ToList();
 
             return View(model);
         }
@@ -50,7 +75,7 @@ namespace EmployeeRegister.Controllers
 
         public ActionResult Sales()
         {
-            var model = db.Employees.Where(i => i.Department == "Sales").ToList();
+            var model = db.Employees.Where(i => i.Department == Department.Sales).ToList();
 
             return View(model);
         }
