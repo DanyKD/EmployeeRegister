@@ -27,7 +27,7 @@ namespace EmployeeRegister.Controllers
 
             return View(searchdb);
         }
-
+        //Get: Sort By Salary
         public ActionResult SortBySalary(string sortBy)
         {
             var SalaryDb = db.Employees.AsQueryable();
@@ -57,7 +57,7 @@ namespace EmployeeRegister.Controllers
                     break;
              }            
             return View(SalaryDb.ToList());
-        }
+        }        
 
         public ActionResult Sport()
         {
@@ -107,7 +107,7 @@ namespace EmployeeRegister.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Salary,Position,Department")] Employee employee)
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Salary,Position,Department,PersonalNumber")] Employee employee)
         {
             if (ModelState.IsValid)
             {
