@@ -42,32 +42,33 @@ namespace EmployeeRegister.Models
 
             int j = 0;                      
             int Dany = 0;
+            int Dany1 = 0;
             string nr = (string)value;
             for (int i = 0; i <= 9; i += 2)
             {
-                Dany = Convert.ToInt16(nr[i]);
+                Dany = Convert.ToInt16(nr[i])-48;
                 int temp = 1;
                 temp = Dany * 2;
                 if (temp > 9)
                 {
                     temp = 1 + (temp - 10);                   
                 }
-                j = j+ temp + Convert.ToInt32(nr[i + 1]);                
-                //if (i <= 9) {
-                //    Dany1 = Convert.ToInt32(nr[i + 1]);
-                //    int temp1 = 1;
-                //    temp1 = Dany1 * 1;                    
-                //        j += temp1;     
-                //}
+                j = j+ temp;
+                if (i < 8)
+                {
+                     Dany1 = Convert.ToInt32(nr[i + 1])-48;
+                    
+                    j = j+ Dany1;
+                }
 
             }
-            if (j % 10 == nr[9])
+            if (j % 10 ==(Convert.ToInt32(nr[9])-48))
             {
                 return ValidationResult.Success;
             }
             else
 
-              return new ValidationResult("Not a valid Swedish SSN number"+nr[9]+"  "+j);                      
+              return new ValidationResult("Not a valid Swedish SSN number");                      
         }
            
     }
